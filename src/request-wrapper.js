@@ -1,7 +1,7 @@
 var request = require( "request" ),
-    requestWrapper;
+    promisedRequest;
 
-requestWrapper = function( options ) {
+promisedRequest = function( options ) {
   return new Promise( function( resolve, reject ) {
     request( options, function( error, response, data ) {
       if ( error ) {
@@ -14,4 +14,4 @@ requestWrapper = function( options ) {
 };
 
 
-module.exports = requestWrapper;
+module.exports = promisedRequest;
